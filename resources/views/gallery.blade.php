@@ -149,6 +149,7 @@
                 </div>
                         <!-- Videos Tab -->
                 <div class="tab-pane fade" id="videos" role="tabpanel" aria-labelledby="videos-tab">
+                            @if ($isEnrolled)
                             <!-- gallery.blade.php -->
                             <div class="gallery-container">
                                 @foreach ($videos as $video)
@@ -168,7 +169,19 @@
                                         </div>
                                     </div>
                                 @endforeach
-                 </div>
+                    </div>
+                    @else
+                    <script> document.addEventListener("DOMContentLoaded", function () {
+        const isEnrolled = @json($isEnrolled);
+
+        document.getElementById('videos-tab').addEventListener('click', function (e) {
+            if (!isEnrolled) {
+                e.preventDefault();
+                window.location.href = "{{ url('/') }}#classes";
+            }
+        });
+    });</script>
+                    @endif
                 </div>
             </div>  
         </div>

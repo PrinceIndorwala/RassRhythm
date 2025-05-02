@@ -81,9 +81,19 @@
                         </ol>
                     </nav>
                 </div>
+                <style>
+            .logoo-img {
+            width: 150px; /* Adjust size as needed */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
                 <div class="col-md-6 text-md-end">
-                    <img src="https://placeholder.svg?height=200&width=300" alt="Contact RassRhythm" class="img-fluid rounded">
-                </div>
+                <img src="{{ asset('images/logoo.png') }}" alt="RassRhythm" class="logoo-img">
+            </div>
             </div>
         </div>
     </header>

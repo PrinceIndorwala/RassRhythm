@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Video;
 use App\Models\Gallery;  // Assuming you also have an Image or Gallery model
+use App\Models\Enrollment;
 use Illuminate\Support\Facades\Validator;
 
 class VideoController extends Controller
@@ -54,6 +55,8 @@ class VideoController extends Controller
     public function index()
     {
         $videos = Video::all();  // Retrieve all videos
+        $isEnrolled = Enrollment::where('user_id', auth()->id())->exists();
+
         return view('admin.videoList', compact('videos'));  // Display videos list
     }
     public function destroy($id)
@@ -82,7 +85,8 @@ public function publicShow($id)
     {
         $galleryItems = Gallery::all(); 
         $videos = Video::all();
-        return view('gallery', compact('galleryItems','videos')); 
+        $isEnrolled = Enrollment::where('user_id', auth()->id())->exists();
+        return view('gallery', compact('galleryItems','videos','isEnrolled')); 
     }
 
      public function show($id)

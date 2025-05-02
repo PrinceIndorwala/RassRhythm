@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Video;
+use App\Models\Enrollment;
 use Illuminate\Support\Facades\Validator;
 
 class GalleryController extends Controller

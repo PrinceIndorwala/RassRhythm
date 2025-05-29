@@ -98,7 +98,11 @@
 
             <button type="submit" class="btn btn-login btn-block">Login</button>
         </form>
-
+        @if(request()->has('message'))
+    <div class="alert alert-warning">
+        {{ request()->get('message') }}
+    </div>
+@endif
         <p class="mt-3">Don't have an account? <a href="{{ route('register') }}">Register here.</a></p>
         <div class="text-center mt-3">
         <a href="{{ route('index') }}" class="btn btn-outline-secondary">Continue without login</a>
@@ -112,11 +116,7 @@
         @endforeach
     </div>
 @endif
-@if(request()->has('message'))
-    <div class="alert alert-warning">
-        {{ request()->get('message') }}
-    </div>
-@endif
+
 
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

@@ -48,7 +48,8 @@
                     @auth
                     <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
                     @else
-                    <a class="nav-link" href="{{ route('login', ['message' => 'Sorry ,To access gallery you have to login.']) }}">Gallery</a>
+                    <!-- <a class="nav-link" href="{{ route('login', ['message' => 'Sorry ,To access gallery you have to login.']) }}">Gallery</a> -->
+                    <a class="nav-link" href="{{ route('login') }}?message=Sorry, to access the gallery, you have to log in.">Gallery</a>
                     @endauth
                     </li>
                     <li class="nav-item">

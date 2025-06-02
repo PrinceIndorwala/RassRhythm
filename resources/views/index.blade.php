@@ -524,7 +524,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
+    <a href="#py-5" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 

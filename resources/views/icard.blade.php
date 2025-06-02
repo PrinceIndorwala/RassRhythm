@@ -111,7 +111,7 @@
         // Redirect after short delay
         setTimeout(function() {
             window.location.href = "{{ url('/') }}"; // your homepage route
-        }, 1000); // 1 seconds delay
+        }, 3000); // 1 seconds delay
     });
         </script>
     </div>
